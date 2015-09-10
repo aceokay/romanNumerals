@@ -1,35 +1,51 @@
 var singleDigit = function(number) {
-  var roman = []
+  var singleRoman = []
 
   for(var i = 1; i <= number; i++) {
     if (i === 9) {
-      roman = [];
-      roman.push("IX");
+      singleRoman = [];
+      singleRoman.push("IX");
     } else if (i <= 8 && i >= 6) {
-      roman.push("I");
+      singleRoman.push("I");
     } else if (i === 5) {
-      roman = [];
-      roman.push("V");
+      singleRoman = [];
+      singleRoman.push("V");
     } else if (i === 4) {
-      roman = [];
-      roman.push("IV");
+      singleRoman = [];
+      singleRoman.push("IV");
     } else if (i <=3) {
-      roman.push("I");
+      singleRoman.push("I");
     };
   };
-  return roman.join("");
+  return singleRoman.join("");
 };
 
-// var romanNumeral = function() {
-//
-// };
+var doubleDigit = function(number) {
+  var doubleRoman = [];
 
-// 1 = I
-// 2 = II
-// 3 = III
-// 4 = IV
-// 5 = V
-// 6 = VI
-// 7 = VII
-// 8 = VIII
-// 9 = IX
+  for(var i = 1; i <= number; i++) {
+    if (i === 9) {
+      doubleRoman = [];
+      doubleRoman.push("XC");
+    } else if (i <= 8 && i >= 6) {
+      doubleRoman.push("X");
+    } else if (i === 5) {
+      doubleRoman = [];
+      doubleRoman.push("L");
+    } else if (i === 4) {
+      doubleRoman = [];
+      doubleRoman.push("XL");
+    } else if (i <=3) {
+      doubleRoman.push("X");
+    };
+  };
+  return doubleRoman.join("");
+};
+
+var romanNumeral = function(number) {
+  var numberArray = number.toString().split("").reverse();
+  var single = singleDigit(numberArray[0]);
+  var double = doubleDigit(numberArray[1]);
+  
+  return double.concat(single);
+};
