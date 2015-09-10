@@ -1,5 +1,5 @@
 describe("romanNumeral", function() {
-  // it("will return an array of given numbers", function() {
-  //   expect(countUpTo(2,4)).to.eql([2,4]);
-  // });
+  it("will return a basic roman numeral from a single digit input", function() {
+    expect(singleDigit(7)).to.eql("VII");
+  });
 });
