@@ -86,3 +86,20 @@ var romanNumeral = function(number) {
 
   return quad.concat(triple).concat(double).concat(single);
 };
+
+
+
+
+
+$(document).ready(function() {
+  $("form#roman-numeral").submit(function(event) {
+    var number = $("input#number").val();
+    var result = romanNumeral(number);
+
+    $(".user-input").text(number);
+    $(".roman").text(result);
+
+    $("#result").show();
+    event.preventDefault();
+  });
+});
