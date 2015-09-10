@@ -12,6 +12,10 @@ describe("romanNumeral", function() {
   });
 
   it("will return a basic roman numeral for the triple digit of the input", function() {
-    expect(romanNumeral(4)).to.equal("CD");
+    expect(tripleDigit(4)).to.equal("CD");
+  });
+
+  it("will return a complete roman numeral for a triple digit input", function() {
+    expect(romanNumeral(226)).to.equal("CCXXVI");
   });
 });

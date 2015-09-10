@@ -42,10 +42,33 @@ var doubleDigit = function(number) {
   return doubleRoman.join("");
 };
 
+var tripleDigit = function(number) {
+  var tripleRoman = [];
+
+  for(var i = 1; i <= number; i++) {
+    if (i === 9) {
+      tripleRoman = [];
+      tripleRoman.push("CM");
+    } else if (i <= 8 && i >= 6) {
+      tripleRoman.push("C");
+    } else if (i === 5) {
+      tripleRoman = [];
+      tripleRoman.push("D");
+    } else if (i === 4) {
+      tripleRoman = [];
+      tripleRoman.push("CD");
+    } else if (i <=3) {
+      tripleRoman.push("C");
+    };
+  };
+  return tripleRoman.join("");
+};
+
 var romanNumeral = function(number) {
   var numberArray = number.toString().split("").reverse();
   var single = singleDigit(numberArray[0]);
   var double = doubleDigit(numberArray[1]);
-  
-  return double.concat(single);
+  var triple = tripleDigit(numberArray[2]);
+
+  return triple.concat(double).concat(single);
 };
