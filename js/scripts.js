@@ -64,11 +64,21 @@ var tripleDigit = function(number) {
   return tripleRoman.join("");
 };
 
+var quadDigit = function(number) {
+  var quadRoman = [];
+
+  for(var i = 1; i <= number; i++) {
+    quadRoman.push("M");
+  };
+  return quadRoman.join("");
+};
+
 var romanNumeral = function(number) {
   var numberArray = number.toString().split("").reverse();
   var single = singleDigit(numberArray[0]);
   var double = doubleDigit(numberArray[1]);
   var triple = tripleDigit(numberArray[2]);
+  var quad = quadDigit(numberArray[3]);
 
-  return triple.concat(double).concat(single);
+  return quad.concat(triple).concat(double).concat(single);
 };
