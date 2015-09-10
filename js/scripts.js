@@ -74,7 +74,11 @@ var quadDigit = function(number) {
 };
 
 var romanNumeral = function(number) {
-  var numberArray = number.toString().split("").reverse();
+  if (number >= 4000) {
+    return "No";
+  }
+
+  var numberArray = number.toString().replace(/,/g,"").split("").reverse();
   var single = singleDigit(numberArray[0]);
   var double = doubleDigit(numberArray[1]);
   var triple = tripleDigit(numberArray[2]);

@@ -26,4 +26,12 @@ describe("romanNumeral", function() {
   it("will return a complete roman numeral for a quad digit input", function() {
     expect(romanNumeral(3226)).to.equal("MMMCCXXVI");
   });
+
+  it("will return an error if number is over 3,999", function() {
+    expect(romanNumeral(4000)).to.equal("No");
+  });
+
+  it("will take out commas from the input", function() {
+    expect(romanNumeral("3,226")).to.equal("MMMCCXXVI");
+  });
 });
